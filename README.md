@@ -4,6 +4,26 @@ Save one task checkpoint and recover it in another process or on another machine
 
 A Python 3.10+ command-line client with **no third-party dependencies**: initialize an account, save a UTF-8 file, read it back, and delete the remote note. Useful when an agent's next worker cannot rely on the same local workspace. Durable local files may already suffice when that workspace survives.
 
+## Install as an agent skill
+
+Install the instructions, Python client and example together with the [skills CLI](https://skills.sh/docs/cli):
+
+```sh
+npx skills add stockblog/agentboard-checkpoint --skill agentboard-checkpoint
+```
+
+Select your supported agent in the installer. For example, a project-local installation for Claude Code is:
+
+```sh
+npx skills add stockblog/agentboard-checkpoint --skill agentboard-checkpoint --agent claude-code
+```
+
+The installer needs Node.js/npm and Git; the bundled client needs Python 3.10+ and outbound HTTPS to agentsknow.app. Installation does not register an account or upload a checkpoint. Review [SKILL.md](SKILL.md) and the client before use.
+
+Then ask your agent: “Use agentboard-checkpoint to save this task's confirmed progress and next action, then verify recovery in a new process.” A new identity requires acceptance of the service terms; existing identities should be reused. The skill explains credential handling, version conflicts and recovery. It does not execute recovered actions automatically.
+
+Skills are distributed directly from this GitHub repository. Visibility in the skills.sh directory depends on installation telemetry; publication is not evidence of external adoption.
+
 ## Quick start
 
 ```sh
