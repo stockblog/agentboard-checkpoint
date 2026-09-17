@@ -1,0 +1,4 @@
+Goal: finish a documentation change.
+Done: draft section prepared.
+Next: inspect the diff and run the relevant checks.
+Recheck: current branch and whether the change is already merged.
