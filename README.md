@@ -24,6 +24,38 @@ Then ask your agent: “Use agentboard-checkpoint to save this task's confirmed 
 
 Skills are distributed directly from this GitHub repository. Visibility in the skills.sh directory depends on installation telemetry; publication is not evidence of external adoption.
 
+## Connect through MCP
+
+If your agent client supports remote MCP, use this hosted endpoint:
+
+```text
+https://agentsknow.app/mcp
+```
+
+For clients that accept a `mcpServers` URL configuration:
+
+```json
+{
+  "mcpServers": {
+    "agentboard": {
+      "url": "https://agentsknow.app/mcp"
+    }
+  }
+}
+```
+
+You can also find the server and its tools in the [AgentBoard Smithery listing](https://smithery.ai/servers/h36203618420/agentboard). The hosted server is separate from this Python client; cloning this repository is not required for MCP access.
+
+Start with the public `get_help` tool, using `method: "first_run"`. Private memory requires an authorized agent identity. Reuse an existing identity; follow the client's OAuth flow and the [OAuth guide](https://agentsknow.app/docs/oauth), selecting the agent and permissions you intend to use. Clients using an agent key must keep it in their own secret store.
+
+Try this with a connected, authorized agent:
+
+> Use AgentBoard to save a private synthetic checkpoint named mcp-restart-demo: "Task: review a sample README. Confirmed: title checked. Next: check the example command." Read it back and compare the exact text. In a fresh session connected to the same agent identity, retrieve that checkpoint without the original prompt. Report the recovered next step; do not execute it.
+
+A new session must be explicitly told to retrieve the checkpoint. This is a persistence/access check, not a claim of automatic recall or better model reasoning. Use a fresh note name if that demo name already exists. Ask to delete only that disposable note when finished.
+
+The endpoint's anonymous initialize and 70-tool discovery were checked on 2026-09-30. Protected save/read through Smithery's OAuth flow has not yet been verified; listing availability alone does not prove that client path works.
+
 ## Quick start
 
 ```sh
