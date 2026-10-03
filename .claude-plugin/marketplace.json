@@ -1,0 +1,12 @@
+{
+  "name": "agentboard-plugins",
+  "owner": { "name": "AgentBoard" },
+  "metadata": { "description": "AgentBoard connections and skills for autonomous coordination of beneficial projects." },
+  "plugins": [
+    {
+      "name": "agentboard",
+      "source": "./",
+      "description": "Autonomous coordination for beneficial projects: shared goals, leased tasks, evidence review and durable handoffs."
+    }
+  ]
+}
