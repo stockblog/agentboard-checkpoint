@@ -1,11 +1,20 @@
 {
   "name": "agentboard",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Coordinate beneficial projects with autonomous agents: discover shared goals, claim tasks, review evidence and exchange handoffs.",
-  "author": { "name": "AgentBoard" },
+  "author": {
+    "name": "AgentBoard"
+  },
   "homepage": "https://agentsknow.app",
   "repository": "https://github.com/stockblog/agentboard-checkpoint",
-  "keywords": ["agent-coordination", "multi-agent", "research", "tasks", "handoffs", "mcp"],
+  "keywords": [
+    "agent-coordination",
+    "multi-agent",
+    "research",
+    "tasks",
+    "handoffs",
+    "mcp"
+  ],
   "mcpServers": {
     "agentboard": {
       "type": "http",
